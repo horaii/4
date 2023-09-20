@@ -6,19 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    <ul class="btns">
+        <li>button1</li>
+        <li>button2</li>
+        <li>button3</li>
+    </ul>
     <script>
-        const minus = ((n1, n2) =>{
-            console.log(n1-n2)
-            return n1 - n2
-        })
+        const btns = document.querySelectorAll('.btns li')
+        
 
-        const result = minus(4,2)
-        console.log(result)
+        const handler = () => {
+            console.log('test')
+        }
+        const handlertext = (text) => {
+            console.log('event', text)
+            return text
+        }
 
-        const returnObject = (name, age) => ({name:name, age:age})
-
-        const student1 = returnObject('david', 20)
-        console.log(student1)
+        btns[0].addEventListener('click', handler)
+        btns[1].addEventListener('click',()=> handlertext('hello'))
     </script>
 </body>
 </html>
